@@ -1,0 +1,1045 @@
+{
+  "assets": [
+    {
+      "contentType": "",
+      "id": "46f7f8f65fb98a63",
+      "kind": "stylesheet",
+      "name": "main.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/46f7f8f65fb98a63.css",
+      "url": "https://radiadoressalirosas.com/wp-content/themes/astra/assets/css/minified/main.min.css?ver=3.9.2"
+    },
+    {
+      "contentType": "",
+      "id": "6176397102901d91",
+      "kind": "stylesheet",
+      "name": "menu-animation.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/6176397102901d91.css",
+      "url": "https://radiadoressalirosas.com/wp-content/themes/astra/assets/css/minified/menu-animation.min.css?ver=3.9.2"
+    },
+    {
+      "contentType": "",
+      "id": "74501ad107fcbe50",
+      "kind": "stylesheet",
+      "name": "frontend.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/74501ad107fcbe50.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/header-footer-elementor/inc/widgets-css/frontend.css?ver=2.5.2"
+    },
+    {
+      "contentType": "",
+      "id": "2ab3ba009819f150",
+      "kind": "stylesheet",
+      "name": "css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/2ab3ba009819f150",
+      "url": "https://fonts.googleapis.com/css?family=Lato:700&display=fallback&ver=3.9.2"
+    },
+    {
+      "contentType": "",
+      "id": "e5bedb90f8983825",
+      "kind": "stylesheet",
+      "name": "wc-blocks.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/e5bedb90f8983825.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css?ver=wc-10.1.4"
+    },
+    {
+      "contentType": "",
+      "id": "0104be3447816b94",
+      "kind": "stylesheet",
+      "name": "woocommerce-layout-grid.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/0104be3447816b94.css",
+      "url": "https://radiadoressalirosas.com/wp-content/themes/astra/assets/css/minified/compatibility/woocommerce/woocommerce-layout-grid.min.css?ver=3.9.2"
+    },
+    {
+      "contentType": "",
+      "id": "3cf966f732e43ee6",
+      "kind": "stylesheet",
+      "name": "woocommerce-smallscreen-grid.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/3cf966f732e43ee6.css",
+      "url": "https://radiadoressalirosas.com/wp-content/themes/astra/assets/css/minified/compatibility/woocommerce/woocommerce-smallscreen-grid.min.css?ver=3.9.2"
+    },
+    {
+      "contentType": "",
+      "id": "97f1f6bbe5b4ab47",
+      "kind": "stylesheet",
+      "name": "woocommerce-grid.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/97f1f6bbe5b4ab47.css",
+      "url": "https://radiadoressalirosas.com/wp-content/themes/astra/assets/css/minified/compatibility/woocommerce/woocommerce-grid.min.css?ver=3.9.2"
+    },
+    {
+      "contentType": "",
+      "id": "510711caa635b5cc",
+      "kind": "stylesheet",
+      "name": "header-footer-elementor.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/510711caa635b5cc.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css?ver=2.5.2"
+    },
+    {
+      "contentType": "",
+      "id": "8b039d0e2d5680e5",
+      "kind": "stylesheet",
+      "name": "elementor-icons.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/8b039d0e2d5680e5.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.44.0"
+    },
+    {
+      "contentType": "",
+      "id": "cd0fed9ed9ab9d85",
+      "kind": "stylesheet",
+      "name": "frontend.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/cd0fed9ed9ab9d85.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.32.2"
+    },
+    {
+      "contentType": "",
+      "id": "6167ad5123e7de57",
+      "kind": "stylesheet",
+      "name": "post-2886.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/6167ad5123e7de57.css",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/elementor/css/post-2886.css?ver=1781392162"
+    },
+    {
+      "contentType": "",
+      "id": "8ffac5d9f4ca5697",
+      "kind": "stylesheet",
+      "name": "all.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/8ffac5d9f4ca5697.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=3.32.2"
+    },
+    {
+      "contentType": "",
+      "id": "d2bd7e920a5091f5",
+      "kind": "stylesheet",
+      "name": "widget-spacer.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/d2bd7e920a5091f5.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/css/widget-spacer.min.css?ver=3.32.2"
+    },
+    {
+      "contentType": "",
+      "id": "6735b24863d7c2d5",
+      "kind": "stylesheet",
+      "name": "v4-shims.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/6735b24863d7c2d5.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.32.2"
+    },
+    {
+      "contentType": "",
+      "id": "bed74925e4f84678",
+      "kind": "stylesheet",
+      "name": "swiper.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/bed74925e4f84678.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=8.4.5"
+    },
+    {
+      "contentType": "",
+      "id": "4b32f99f4b153456",
+      "kind": "stylesheet",
+      "name": "e-swiper.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/4b32f99f4b153456.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/css/conditionals/e-swiper.min.css?ver=3.32.2"
+    },
+    {
+      "contentType": "",
+      "id": "37c4071613cf663f",
+      "kind": "stylesheet",
+      "name": "widget-heading.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/37c4071613cf663f.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.32.2"
+    },
+    {
+      "contentType": "",
+      "id": "0851f266b83edfeb",
+      "kind": "stylesheet",
+      "name": "widget-image.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/0851f266b83edfeb.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=3.32.2"
+    },
+    {
+      "contentType": "",
+      "id": "17b5f046a3fc63ac",
+      "kind": "stylesheet",
+      "name": "post-4387.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/17b5f046a3fc63ac.css",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/elementor/css/post-4387.css?ver=1781393923"
+    },
+    {
+      "contentType": "",
+      "id": "e8f722d240e26193",
+      "kind": "stylesheet",
+      "name": "post-1165.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/e8f722d240e26193.css",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/elementor/css/post-1165.css?ver=1781392162"
+    },
+    {
+      "contentType": "",
+      "id": "704239c16792e159",
+      "kind": "stylesheet",
+      "name": "dashicons.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/704239c16792e159.css",
+      "url": "https://radiadoressalirosas.com/wp-includes/css/dashicons.min.css?ver=7.0"
+    },
+    {
+      "contentType": "",
+      "id": "a5b6b05023bb4178",
+      "kind": "stylesheet",
+      "name": "brands.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/a5b6b05023bb4178.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/woocommerce/assets/css/brands.css?ver=10.1.4"
+    },
+    {
+      "contentType": "",
+      "id": "adec194986db2efb",
+      "kind": "stylesheet",
+      "name": "swatches.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/adec194986db2efb.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/variation-swatches-woo/assets/css/swatches.css?ver=1.0.13"
+    },
+    {
+      "contentType": "",
+      "id": "9759a144bbb44eaa",
+      "kind": "stylesheet",
+      "name": "style.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/9759a144bbb44eaa.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/ajax-search-for-woocommerce/assets/css/style.min.css?ver=1.31.0"
+    },
+    {
+      "contentType": "",
+      "id": "b6fc2e641cc0f3cb",
+      "kind": "stylesheet",
+      "name": "elementor-icons.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/b6fc2e641cc0f3cb.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.34.0"
+    },
+    {
+      "contentType": "",
+      "id": "fea6b6347c18f705",
+      "kind": "stylesheet",
+      "name": "widget-icon-list.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/fea6b6347c18f705.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=3.24.3"
+    },
+    {
+      "contentType": "",
+      "id": "2a4bb8a809d0ae66",
+      "kind": "stylesheet",
+      "name": "widget-social-icons.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/2a4bb8a809d0ae66.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.24.0"
+    },
+    {
+      "contentType": "",
+      "id": "e6f9e81f136407be",
+      "kind": "stylesheet",
+      "name": "fontawesome.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/e6f9e81f136407be.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.css?ver=5.15.3"
+    },
+    {
+      "contentType": "",
+      "id": "3b066a5aeca24c7b",
+      "kind": "stylesheet",
+      "name": "brands.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/3b066a5aeca24c7b.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.css?ver=5.15.3"
+    },
+    {
+      "contentType": "",
+      "id": "2dc49ea246062869",
+      "kind": "stylesheet",
+      "name": "solid.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/2dc49ea246062869.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.css?ver=5.15.3"
+    },
+    {
+      "contentType": "",
+      "id": "8dbc24682e1150a6",
+      "kind": "stylesheet",
+      "name": "css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/8dbc24682e1150a6",
+      "url": "https://fonts.googleapis.com/css?family=Roboto:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap"
+    },
+    {
+      "contentType": "",
+      "id": "b191f343cf6658be",
+      "kind": "stylesheet",
+      "name": "css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/b191f343cf6658be",
+      "url": "https://fonts.googleapis.com/css?family=Inter:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap"
+    },
+    {
+      "contentType": "",
+      "id": "4ae34f319c318aa2",
+      "kind": "stylesheet",
+      "name": "css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/4ae34f319c318aa2",
+      "url": "https://fonts.googleapis.com/css?family=Roboto+Slab:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap"
+    },
+    {
+      "contentType": "",
+      "id": "3c1861914681ce22",
+      "kind": "stylesheet",
+      "name": "fontawesome.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/3c1861914681ce22.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3"
+    },
+    {
+      "contentType": "",
+      "id": "a565a08dcb9ed74c",
+      "kind": "stylesheet",
+      "name": "brands.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/a565a08dcb9ed74c.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=5.15.3"
+    },
+    {
+      "contentType": "",
+      "id": "cd39d79468209fe2",
+      "kind": "stylesheet",
+      "name": "solid.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/cd39d79468209fe2.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3"
+    },
+    {
+      "contentType": "",
+      "id": "3d9a7fb4e7877f7f",
+      "kind": "stylesheet",
+      "name": "regular.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/3d9a7fb4e7877f7f.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=5.15.3"
+    },
+    {
+      "contentType": "",
+      "id": "ce4e6b88a7726d1c",
+      "kind": "stylesheet",
+      "name": "widget-social-icons.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/ce4e6b88a7726d1c.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.32.2"
+    },
+    {
+      "contentType": "",
+      "id": "8ff820f5f805544e",
+      "kind": "stylesheet",
+      "name": "apple-webkit.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/8ff820f5f805544e.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/css/conditionals/apple-webkit.min.css?ver=3.32.2"
+    },
+    {
+      "contentType": "",
+      "id": "1318ec7651633e3d",
+      "kind": "stylesheet",
+      "name": "widget-google_maps.min.css",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/1318ec7651633e3d.css",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/css/widget-google_maps.min.css?ver=3.32.2"
+    },
+    {
+      "contentType": "image/png",
+      "id": "cc0c8257fa1f3632",
+      "kind": "image",
+      "name": "logo-blanco.png",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/cc0c8257fa1f3632.png",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/logo-blanco.png"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "a5559c7f8e7d6c6e",
+      "kind": "image",
+      "name": "FONDO-5-1024x658.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/a5559c7f8e7d6c6e.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/FONDO-5-1024x658.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "b9fe9c0e494e3dd9",
+      "kind": "image",
+      "name": "FONDO-3-1024x658.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/b9fe9c0e494e3dd9.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/FONDO-3-1024x658.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "8080dad5e5fc9633",
+      "kind": "image",
+      "name": "FONDO-4-1024x658.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/8080dad5e5fc9633.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/FONDO-4-1024x658.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "3889816285d8d4af",
+      "kind": "image",
+      "name": "FONDO-5.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/3889816285d8d4af.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/FONDO-5.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "2c7b88f36df1940d",
+      "kind": "image",
+      "name": "FONDO-3.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/2c7b88f36df1940d.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/FONDO-3.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "effd7c9df0cef23e",
+      "kind": "image",
+      "name": "FONDO-4.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/effd7c9df0cef23e.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/FONDO-4.jpg"
+    },
+    {
+      "contentType": "image/png",
+      "id": "b010417c83092b4c",
+      "kind": "image",
+      "name": "CeKFLHa.png",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/b010417c83092b4c.png",
+      "url": "https://i.imgur.com/CeKFLHa.png"
+    },
+    {
+      "contentType": "font/woff2",
+      "id": "846fe8482f3e9897",
+      "kind": "font",
+      "name": "fa-brands-400.woff2",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/846fe8482f3e9897.woff2",
+      "url": "https://radiadoressalirosas.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.woff2"
+    },
+    {
+      "contentType": "image/gif",
+      "id": "72e36c899d10ce59",
+      "kind": "image",
+      "name": "g.gif",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/72e36c899d10ce59.gif",
+      "url": "https://pixel.wp.com/g.gif?v=ext&blog=248729981&post=4387&tz=0&srv=radiadoressalirosas.com&j=1%3A15.2&host=radiadoressalirosas.com&ref=&fcp=0&rand=0.9051142374522348"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "cd3af6fdaf760cd6",
+      "kind": "image",
+      "name": "fondo-2-salirosas-1-scaled.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/cd3af6fdaf760cd6.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/fondo-2-salirosas-1-scaled.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "c9c45213a2bc7858",
+      "kind": "image",
+      "name": "fondo-2-salirosas-scaled.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/c9c45213a2bc7858.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/fondo-2-salirosas-scaled.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "1838d6002583827f",
+      "kind": "image",
+      "name": "fondo-4-salirosas-scaled.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/1838d6002583827f.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/fondo-4-salirosas-scaled.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "d4fc4da6bb24e3f5",
+      "kind": "image",
+      "name": "1-MAN-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/d4fc4da6bb24e3f5.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/1-MAN-600x600.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "a40da9892e1b7862",
+      "kind": "image",
+      "name": "29-VOLVO-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/a40da9892e1b7862.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/29-VOLVO-600x600.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "986a0bb19b8a91c5",
+      "kind": "image",
+      "name": "novedades-en-enfriadores-2048x745.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/986a0bb19b8a91c5.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/11/novedades-en-enfriadores-2048x745.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "885f4e3ed4c7d87f",
+      "kind": "image",
+      "name": "radiador-descuento-2048x745.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/885f4e3ed4c7d87f.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/11/radiador-descuento-2048x745.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "245986f5e3645d76",
+      "kind": "image",
+      "name": "intercooler-descuento-2048x745.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/245986f5e3645d76.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/11/intercooler-descuento-2048x745.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "8dba984ac3ee53c7",
+      "kind": "image",
+      "name": "27-VOLVO-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/8dba984ac3ee53c7.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/27-VOLVO-600x600.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "53a5dede185c462d",
+      "kind": "image",
+      "name": "6-VOLVO-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/53a5dede185c462d.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/6-VOLVO-600x600.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "f7275de6ffe746a5",
+      "kind": "image",
+      "name": "22-SCANIA-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/f7275de6ffe746a5.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/22-SCANIA-600x600.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "ca0604ba5be0cb31",
+      "kind": "image",
+      "name": "34-SCANIA-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/ca0604ba5be0cb31.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/34-SCANIA-600x600.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "8d648c2db17c4169",
+      "kind": "image",
+      "name": "41-SCANIA-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/8d648c2db17c4169.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/41-SCANIA-600x600.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "985365203a514b0c",
+      "kind": "image",
+      "name": "40-SCANIA-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/985365203a514b0c.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/40-SCANIA-600x600.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "d8bb5b64984071ea",
+      "kind": "image",
+      "name": "46-MERCEDES-BENZ-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/d8bb5b64984071ea.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/46-MERCEDES-BENZ-600x600.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "771a3f6b7820a1ea",
+      "kind": "image",
+      "name": "11-INTERNATIONAL-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/771a3f6b7820a1ea.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/11-INTERNATIONAL-600x600.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "1a9a5f4256646cae",
+      "kind": "image",
+      "name": "42-SCANIA-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/1a9a5f4256646cae.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/42-SCANIA-600x600.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "1387e15925483807",
+      "kind": "image",
+      "name": "10-freightliner-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/1387e15925483807.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/10-freightliner-600x600.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "a68d472ba0ae4360",
+      "kind": "image",
+      "name": "38-MERCEDES-BENZ-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/a68d472ba0ae4360.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/38-MERCEDES-BENZ-600x600.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "eae74e5118c0f0e8",
+      "kind": "image",
+      "name": "23-VOLVO-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/eae74e5118c0f0e8.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/23-VOLVO-600x600.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "05e39073ffdaf23a",
+      "kind": "image",
+      "name": "24-VOLVO-600x600.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/05e39073ffdaf23a.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/24-VOLVO-600x600.jpg"
+    },
+    {
+      "contentType": "image/png",
+      "id": "c6871fe053d7f6aa",
+      "kind": "image",
+      "name": "cropped-icono-32x32.png",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/c6871fe053d7f6aa.png",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/cropped-icono-32x32.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "717e47c449d5ddd4",
+      "kind": "image",
+      "name": "descarga-8-1.png",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/717e47c449d5ddd4.png",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/descarga-8-1.png"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "7e946944bd4ec0f4",
+      "kind": "image",
+      "name": "fondo-2-1-scaled.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/7e946944bd4ec0f4.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/fondo-2-1-scaled.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "1b7910f92abd1b08",
+      "kind": "image",
+      "name": "enfriadores-camiones-tractocamiones.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/1b7910f92abd1b08.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/11/enfriadores-camiones-tractocamiones.jpg"
+    },
+    {
+      "contentType": "image/png",
+      "id": "3f92c38ca2a5db0b",
+      "kind": "image",
+      "name": "cropped-logo-blanco-1-165x55.png",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/3f92c38ca2a5db0b.png",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/cropped-logo-blanco-1-165x55.png"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "5280da618993dbe7",
+      "kind": "image",
+      "name": "FONDO-5-600x385.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/5280da618993dbe7.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/FONDO-5-600x385.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "370c0eef933cf001",
+      "kind": "image",
+      "name": "FONDO-3-600x385.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/370c0eef933cf001.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/FONDO-3-600x385.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "5fff9265c129cb33",
+      "kind": "image",
+      "name": "FONDO-4-600x385.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/5fff9265c129cb33.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/FONDO-4-600x385.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "fbb9764053472c67",
+      "kind": "image",
+      "name": "novedades-en-enfriadores-600x218.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/fbb9764053472c67.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/11/novedades-en-enfriadores-600x218.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "256a7e4ce3254a96",
+      "kind": "image",
+      "name": "radiador-descuento-600x218.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/256a7e4ce3254a96.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/11/radiador-descuento-600x218.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "a46ea0a2bb66cf25",
+      "kind": "image",
+      "name": "1-MAN-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/a46ea0a2bb66cf25.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/1-MAN-300x300.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "cf70f63eef09f00c",
+      "kind": "image",
+      "name": "intercooler-descuento-600x218.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/cf70f63eef09f00c.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/11/intercooler-descuento-600x218.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "a324a1d3bdb3bb23",
+      "kind": "image",
+      "name": "29-VOLVO-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/a324a1d3bdb3bb23.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/29-VOLVO-300x300.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "6f4e6123f52bfd07",
+      "kind": "image",
+      "name": "27-VOLVO-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/6f4e6123f52bfd07.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/27-VOLVO-300x300.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "306d8f970dde87be",
+      "kind": "image",
+      "name": "6-VOLVO-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/306d8f970dde87be.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/6-VOLVO-300x300.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "ee1acfd753a687ff",
+      "kind": "image",
+      "name": "34-SCANIA-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/ee1acfd753a687ff.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/34-SCANIA-300x300.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "2601702c00d7f35a",
+      "kind": "image",
+      "name": "41-SCANIA-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/2601702c00d7f35a.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/41-SCANIA-300x300.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "74487a82f76221f0",
+      "kind": "image",
+      "name": "22-SCANIA-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/74487a82f76221f0.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/22-SCANIA-300x300.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "5b586f15856abf2d",
+      "kind": "image",
+      "name": "40-SCANIA-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/5b586f15856abf2d.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/40-SCANIA-300x300.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "35f033141ef11253",
+      "kind": "image",
+      "name": "46-MERCEDES-BENZ-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/35f033141ef11253.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/46-MERCEDES-BENZ-300x300.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "14fd748ad537647c",
+      "kind": "image",
+      "name": "11-INTERNATIONAL-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/14fd748ad537647c.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/11-INTERNATIONAL-300x300.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "6781a4ef1145fbfa",
+      "kind": "image",
+      "name": "42-SCANIA-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/6781a4ef1145fbfa.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/42-SCANIA-300x300.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "a7a4cebf8f83a92a",
+      "kind": "image",
+      "name": "23-VOLVO-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/a7a4cebf8f83a92a.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/23-VOLVO-300x300.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "b847c11d01f8e4ce",
+      "kind": "image",
+      "name": "38-MERCEDES-BENZ-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/b847c11d01f8e4ce.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/38-MERCEDES-BENZ-300x300.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "3cc3afdb19f87105",
+      "kind": "image",
+      "name": "10-freightliner-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/3cc3afdb19f87105.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/10-freightliner-300x300.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "035305dd12158977",
+      "kind": "image",
+      "name": "24-VOLVO-300x300.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/035305dd12158977.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/12/24-VOLVO-300x300.jpg"
+    },
+    {
+      "contentType": "image/png",
+      "id": "df524a198367feae",
+      "kind": "image",
+      "name": "cropped-logo-blanco-1.png",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/df524a198367feae.png",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/cropped-logo-blanco-1.png"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "9149d44183e754f7",
+      "kind": "image",
+      "name": "radiadores-camiones-tractocamiones.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/9149d44183e754f7.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/11/radiadores-camiones-tractocamiones.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "ece8caa848943381",
+      "kind": "image",
+      "name": "novedades-en-enfriadores-1024x373.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/ece8caa848943381.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/11/novedades-en-enfriadores-1024x373.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "f60ddade19bb3f4f",
+      "kind": "image",
+      "name": "radiador-descuento-1024x373.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/f60ddade19bb3f4f.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/11/radiador-descuento-1024x373.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "49e4a393bb4e78a0",
+      "kind": "image",
+      "name": "intercooler-descuento-1024x373.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/49e4a393bb4e78a0.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/11/intercooler-descuento-1024x373.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "2a1aa3071828545a",
+      "kind": "image",
+      "name": "fondo-1-scaled.jpg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/2a1aa3071828545a.jpg",
+      "url": "https://radiadoressalirosas.com/wp-content/uploads/2025/09/fondo-1-scaled.jpg"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "91dde4d94d14c2b8",
+      "kind": "image",
+      "name": "svg-1",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/91dde4d94d14c2b8.svg",
+      "url": "inline-svg:91dde4d94d14c2b8"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "ff8466218ff7f558",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/ff8466218ff7f558.svg",
+      "url": "inline-svg:ff8466218ff7f558"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "effbd68af5c57dac",
+      "kind": "image",
+      "name": "svg-3",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/effbd68af5c57dac.svg",
+      "url": "inline-svg:effbd68af5c57dac"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "62f84d3b85b7cf63",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/62f84d3b85b7cf63.svg",
+      "url": "inline-svg:62f84d3b85b7cf63"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "f067c08e3c1b7ceb",
+      "kind": "image",
+      "name": "svg-5",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/f067c08e3c1b7ceb.svg",
+      "url": "inline-svg:f067c08e3c1b7ceb"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "bd11f89a0ff37550",
+      "kind": "image",
+      "name": "svg-6",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/bd11f89a0ff37550.svg",
+      "url": "inline-svg:bd11f89a0ff37550"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "82e4dcab184bb772",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/82e4dcab184bb772.svg",
+      "url": "inline-svg:82e4dcab184bb772"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "33d0ea55af117d85",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/33d0ea55af117d85.svg",
+      "url": "inline-svg:33d0ea55af117d85"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "6c2fa552fcb2d28e",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/6c2fa552fcb2d28e.svg",
+      "url": "inline-svg:6c2fa552fcb2d28e"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "06f6ad759b773f97",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/06f6ad759b773f97.svg",
+      "url": "inline-svg:06f6ad759b773f97"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "136f86c9f0e76b87",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/136f86c9f0e76b87.svg",
+      "url": "inline-svg:136f86c9f0e76b87"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "25fca73b557a8068",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/25fca73b557a8068.svg",
+      "url": "inline-svg:25fca73b557a8068"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "2bac951659eaaecd",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/2bac951659eaaecd.svg",
+      "url": "inline-svg:2bac951659eaaecd"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "f52890848994c19d",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/f52890848994c19d.svg",
+      "url": "inline-svg:f52890848994c19d"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "c31a9d4a9ad0d151",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/c31a9d4a9ad0d151.svg",
+      "url": "inline-svg:c31a9d4a9ad0d151"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "398d692ca50a87d9",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/398d692ca50a87d9.svg",
+      "url": "inline-svg:398d692ca50a87d9"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "db1e2e88f16bd08b",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/db1e2e88f16bd08b.svg",
+      "url": "inline-svg:db1e2e88f16bd08b"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "d5fd3dca0b51ac3a",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/d5fd3dca0b51ac3a.svg",
+      "url": "inline-svg:d5fd3dca0b51ac3a"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "0a12663a89b257bf",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/0a12663a89b257bf.svg",
+      "url": "inline-svg:0a12663a89b257bf"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "e5699c4cc376adef",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/e5699c4cc376adef.svg",
+      "url": "inline-svg:e5699c4cc376adef"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "5e4be99c2b174979",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/5e4be99c2b174979.svg",
+      "url": "inline-svg:5e4be99c2b174979"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "2685b660c13bf5f1",
+      "kind": "image",
+      "name": "ast-basket-icon-svg",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/2685b660c13bf5f1.svg",
+      "url": "inline-svg:2685b660c13bf5f1"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "ad404c689a12ad7e",
+      "kind": "image",
+      "name": "svg-23",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/ad404c689a12ad7e.svg",
+      "url": "inline-svg:ad404c689a12ad7e"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "cd73a7f7190535a6",
+      "kind": "image",
+      "name": "svg-24",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/cd73a7f7190535a6.svg",
+      "url": "inline-svg:cd73a7f7190535a6"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "ca3104af900a5181",
+      "kind": "image",
+      "name": "svg-25",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/ca3104af900a5181.svg",
+      "url": "inline-svg:ca3104af900a5181"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "051c536d31850a6e",
+      "kind": "image",
+      "name": "svg-26",
+      "path": "/var/folders/0q/r8jm0bhd3pb0pqjd2xj2xmj80000gn/T/browser-use/assets/6f118768-7cd8-42af-b0f9-ee00043c85e4/051c536d31850a6e.svg",
+      "url": "inline-svg:051c536d31850a6e"
+    }
+  ],
+  "failures": []
+}
