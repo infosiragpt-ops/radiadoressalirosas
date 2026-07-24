@@ -19,6 +19,21 @@ precios ni habilita compra directa. El sistema nunca convierte esos ceros en
 precios ficticios. Un administrador puede habilitar `direct` únicamente junto
 con un precio positivo.
 
+## Clonar el proyecto
+
+El repositorio es público y no requiere una cuenta de GitHub para clonarlo:
+
+```bash
+git clone https://github.com/infosiragpt-ops/radiadoressalirosas.git
+cd radiadoressalirosas
+npm ci
+cp .env.example .env
+```
+
+Después, complete en `.env` la conexión de PostgreSQL y genere
+`SESSION_SECRET` con `openssl rand -base64 48`. Continúe con una de las rutas de
+ejecución siguientes.
+
 ## Ejecución local
 
 Requiere Node.js 22+ y PostgreSQL 16+.
