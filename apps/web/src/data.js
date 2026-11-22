@@ -1,3 +1,4 @@
+import { getFamilyId } from "./productFamilies.js";
 const ASSET_ROOT = "/assets/original";
 
 export const FALLBACK_PRODUCTS = [
@@ -184,11 +185,12 @@ export function normalizeProduct(product, index = 0) {
     categoryObject?.name ||
     product.category_name ||
     (typeof product.category === "string" ? product.category : "") ||
-    "Radiadores";
+    "Sin categoría";
   const brand =
     brandObject?.name ||
     product.brand_name ||
     (typeof product.brand === "string" ? product.brand : "") ||
+    (product.type === "simple" ? categoryObject?.name : "") ||
     "Sin marca especificada";
   const images = Array.isArray(product.images) ? product.images : [];
   const imageObject =
@@ -245,10 +247,11 @@ export function normalizeProduct(product, index = 0) {
       product.description ||
       product.short_description ||
       product.shortDescription ||
-      "Repuesto de sistema de enfriamiento para transporte pesado. Confirma compatibilidad con nuestro equipo técnico.",
+      "Confirma las especificaciones y la compatibilidad con nuestro equipo técnico.",
     sku: product.sku || product.code || product.part_number || product.partNumber || "Consultar",
     brand,
     category,
+    familyId: getFamilyId({ ...product, name, category }),
     categorySlug:
       categoryObject?.slug || product.category_slug || product.categorySlug || slugify(category),
     image: firstImage,
@@ -315,7 +318,7 @@ export async function loadProducts(signal) {
     const normalized = products
       .map(normalizeProduct)
       .filter((product) => product.active);
-    if (normalized.length) return normalized;
+    return normalized;
   } catch (error) {
     if (error?.name === "AbortError") throw error;
   }
@@ -348,9 +351,6 @@ export function formatPrice(product) {
   }).format(price);
 }
 
-export function productFallbackImage(product) {
-  const category = String(product?.categorySlug || "").toLowerCase();
-  if (category.includes("intercool")) return `${ASSET_ROOT}/products/5724-6-freightliner.jpg`;
-  if (category.includes("enfri")) return `${ASSET_ROOT}/products/5879-27-SCANIA.jpg`;
-  return `${ASSET_ROOT}/products/5719-1-freightliner.jpg`;
+export function productFallbackImage() {
+  return "/clau-icon.png";
 }

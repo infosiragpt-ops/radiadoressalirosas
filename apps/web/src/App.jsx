@@ -1,3 +1,6 @@
+import { CatalogPage, MobileNavigation } from "./Catalog.jsx";
+import { Icon, Link, SmartImage, ProductCard, makeWhatsAppUrl, whatsappLink, PHONE } from "./shopUI.jsx";
+import { productFamilies, familyById, matchesSearch } from "./productFamilies.js";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   FALLBACK_PRODUCTS,
@@ -23,20 +26,13 @@ import {
 } from "./api.js";
 
 const ASSET_ROOT = "/assets/original";
-const heroSlides = [
-  { desktop: "/clau-portada.webp", mobile: "/clau-flotas.webp", alt: "Radiadores Clau S.A.C. para flotas de buses y camiones" },
-  { desktop: `${ASSET_ROOT}/hero-2.jpg`, mobile: "/clau-camiones.webp", alt: "Radiadores para buses y camiones europeos" },
-];
 const STAFF_ROLES = new Set(["admin", "staff"]);
 const BUSINESS_ADDRESS = "Av. Arequipa 2491, Lima, Perú, 0600";
 const MAP_QUERY = encodeURIComponent("Av. Arequipa 2491, Lima, Perú");
 const BUSINESS_MAP_EMBED = `https://maps.google.com/maps?q=${MAP_QUERY}&z=16&output=embed`;
 const BUSINESS_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${MAP_QUERY}`;
-const PHONE = "+51919475144";
 const DISPLAY_PHONE = "+51 919 475 144";
 const WEBSITE = "https://radiadoresclau.com";
-const whatsappLink = (message) =>
-  `https://wa.me/${PHONE.slice(1)}?text=${encodeURIComponent(message)}`;
 const QUOTE_STATUS_LABELS = {
   new: "Nueva",
   contacted: "Contactada",
@@ -139,163 +135,6 @@ async function loadAllAdminPages(loader, query = {}, options) {
   return rows;
 }
 
-const iconPaths = {
-  search: (
-    <>
-      <circle cx="11" cy="11" r="7" />
-      <path d="m20 20-4.7-4.7" />
-    </>
-  ),
-  cart: (
-    <>
-      <path d="M3 5h2l1.7 9.1a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L20 8H6" />
-      <circle cx="9" cy="20" r="1" />
-      <circle cx="17" cy="20" r="1" />
-    </>
-  ),
-  user: (
-    <>
-      <circle cx="12" cy="8" r="4" />
-      <path d="M4.8 21a7.2 7.2 0 0 1 14.4 0" />
-    </>
-  ),
-  menu: (
-    <>
-      <path d="M4 7h16" />
-      <path d="M4 12h16" />
-      <path d="M4 17h16" />
-    </>
-  ),
-  close: (
-    <>
-      <path d="m6 6 12 12" />
-      <path d="M18 6 6 18" />
-    </>
-  ),
-  arrowLeft: <path d="m15 18-6-6 6-6" />,
-  arrowRight: <path d="m9 18 6-6-6-6" />,
-  chevron: <path d="m9 18 6-6-6-6" />,
-  whatsapp: (
-    <>
-      <path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.7a8.5 8.5 0 1 1 16.2-4.1Z" />
-      <path d="M8.2 7.5c.2-.4.4-.4.7-.4h.4c.2 0 .4 0 .5.4l.8 2c.1.3.1.5-.1.7l-.6.8c-.2.2-.1.4 0 .6.7 1.2 1.7 2.1 2.9 2.7.2.1.4.1.6-.1l.9-1.1c.2-.2.4-.3.7-.2l2 .9c.3.1.4.3.4.5 0 .3-.2 1.6-1.1 2.2-.8.6-1.8.7-2.4.5-.5-.1-1.3-.3-2.3-.7-2.2-.9-3.7-3-3.8-3.2-.2-.2-1.3-1.8-1.3-3.4 0-1.1.5-1.8.7-2.2Z" />
-    </>
-  ),
-  phone: (
-    <path d="M7.2 3.5 10 7.8 8.4 9.6c1.2 2.5 3.3 4.6 5.8 5.8l1.9-1.6 4.3 2.8c.2 2.5-1.2 4.2-3.8 4.4C10 20.1 3.9 14 3 7.3c.2-2.5 1.8-4 4.2-3.8Z" />
-  ),
-  mail: (
-    <>
-      <rect x="3" y="5" width="18" height="14" rx="2" />
-      <path d="m4 7 8 6 8-6" />
-    </>
-  ),
-  pin: (
-    <>
-      <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
-      <circle cx="12" cy="10" r="2.5" />
-    </>
-  ),
-  filter: (
-    <>
-      <path d="M4 6h16" />
-      <path d="M7 12h10" />
-      <path d="M10 18h4" />
-    </>
-  ),
-  plus: (
-    <>
-      <path d="M12 5v14" />
-      <path d="M5 12h14" />
-    </>
-  ),
-  minus: <path d="M5 12h14" />,
-  trash: (
-    <>
-      <path d="M4 7h16" />
-      <path d="M9 7V4h6v3" />
-      <path d="m7 7 1 14h8l1-14" />
-      <path d="M10 11v6M14 11v6" />
-    </>
-  ),
-  check: <path d="m5 12 4 4L19 6" />,
-  dashboard: (
-    <>
-      <rect x="3" y="3" width="7" height="7" rx="1" />
-      <rect x="14" y="3" width="7" height="7" rx="1" />
-      <rect x="3" y="14" width="7" height="7" rx="1" />
-      <rect x="14" y="14" width="7" height="7" rx="1" />
-    </>
-  ),
-  box: (
-    <>
-      <path d="m4 7 8-4 8 4-8 4-8-4Z" />
-      <path d="m4 7 8 4 8-4v10l-8 4-8-4V7Z" />
-      <path d="M12 11v10" />
-    </>
-  ),
-  quote: (
-    <>
-      <path d="M6 8h12a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3h-6l-4 3v-3H6a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3Z" />
-      <path d="M8 12h8M8 15h5" />
-    </>
-  ),
-  category: (
-    <>
-      <circle cx="7" cy="7" r="3" />
-      <circle cx="17" cy="7" r="3" />
-      <circle cx="7" cy="17" r="3" />
-      <circle cx="17" cy="17" r="3" />
-    </>
-  ),
-};
-
-function Icon({ name, size = 24, strokeWidth = 1.8, className = "" }) {
-  return (
-    <svg
-      className={className}
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={strokeWidth}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      {iconPaths[name]}
-    </svg>
-  );
-}
-
-function Link({ to, navigate, children, className = "", onClick, ...props }) {
-  return (
-    <a
-      href={to}
-      className={className}
-      onClick={(event) => {
-        onClick?.(event);
-        if (
-          event.defaultPrevented ||
-          event.button !== 0 ||
-          event.metaKey ||
-          event.ctrlKey ||
-          event.shiftKey ||
-          event.altKey
-        ) {
-          return;
-        }
-        event.preventDefault();
-        navigate(to);
-      }}
-      {...props}
-    >
-      {children}
-    </a>
-  );
-}
-
 function Brand() {
   return (
     <span className="clau-brand">
@@ -306,33 +145,6 @@ function Brand() {
       </span>
     </span>
   );
-}
-
-function SmartImage({ src, fallback, alt, className = "", ...props }) {
-  const [current, setCurrent] = useState(src || fallback);
-
-  useEffect(() => {
-    setCurrent(src || fallback);
-  }, [src, fallback]);
-
-  return (
-    <img
-      {...props}
-      className={className}
-      src={current}
-      alt={alt}
-      onError={() => {
-        if (current !== fallback) setCurrent(fallback);
-      }}
-    />
-  );
-}
-
-function makeWhatsAppUrl(product, quantity = 1) {
-  const text = product
-    ? `Hola, deseo cotizar ${quantity > 1 ? `${quantity} unidades de ` : ""}${product.name} (código ${product.sku}). ¿Podrían confirmar disponibilidad y compatibilidad?`
-    : "Hola, deseo recibir asesoría para encontrar el repuesto correcto para mi vehículo.";
-  return whatsappLink(text);
 }
 
 function makeCartWhatsAppUrl(items) {
@@ -360,18 +172,21 @@ function useRoute() {
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
-  const navigate = (to) => {
+  const navigate = (to, { replace = false, scroll = true } = {}) => {
     const next = new URL(to, window.location.origin);
     const nextRoute = `${next.pathname}${next.search}`;
-    if (nextRoute !== route) window.history.pushState({}, "", nextRoute);
+    if (nextRoute !== route) {
+      if (replace) window.history.replaceState({}, "", nextRoute);
+      else window.history.pushState({}, "", nextRoute);
+    }
     setRoute(nextRoute);
-    window.scrollTo({ top: 0, behavior: "instant" });
+    if (scroll) window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   return { route, pathname: new URL(route, window.location.origin).pathname, navigate };
 }
 
-function Header({ products, cartCount, navigate }) {
+function Header({ products, cartCount, navigate, catalog }) {
   const [query, setQuery] = useState("");
   const [focused, setFocused] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -381,11 +196,7 @@ function Header({ products, cartCount, navigate }) {
     const term = query.trim().toLocaleLowerCase("es");
     if (term.length < 2) return [];
     return products
-      .filter((product) =>
-        `${product.name} ${product.brand} ${product.sku}`
-          .toLocaleLowerCase("es")
-          .includes(term),
-      )
+      .filter((product) => matchesSearch(product, term))
       .slice(0, 6);
   }, [products, query]);
 
@@ -414,7 +225,7 @@ function Header({ products, cartCount, navigate }) {
   const closeAndNavigate = () => setMobileOpen(false);
 
   return (
-    <header className="site-header">
+    <header className={catalog ? "site-header catalog-header" : "site-header"}>
       <div className="header-inner">
         <Link to="/" navigate={navigate} className="brand-link" aria-label="Radiadores Clau S.A.C., inicio">
           <Brand />
@@ -454,10 +265,7 @@ function Header({ products, cartCount, navigate }) {
 
         <nav className="desktop-nav" aria-label="Navegación principal">
           <Link to="/" navigate={navigate}>
-            Inicio
-          </Link>
-          <Link to="/store/" navigate={navigate}>
-            Productos
+            Catálogo
           </Link>
           <Link to="/nosotros/" navigate={navigate}>
             Nosotros
@@ -475,7 +283,7 @@ function Header({ products, cartCount, navigate }) {
             aria-label={`Carrito, ${cartCount} productos`}
           >
             <Icon name="cart" size={24} strokeWidth={2} />
-            <span className="cart-count">{cartCount}</span>
+            {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
           </Link>
           <Link
             to="/my-account/"
@@ -527,8 +335,7 @@ function Header({ products, cartCount, navigate }) {
         )}
         <nav aria-label="Navegación móvil">
           {[
-            ["/", "Inicio"],
-            ["/store/", "Productos"],
+            ["/", "Catálogo"],
             ["/nosotros/", "Nosotros"],
             ["/contacto/", "Contacto"],
             ["/my-account/", "Mi cuenta"],
@@ -592,136 +399,6 @@ function SearchResults({ results, query, navigate, onSelect, mobile = false }) {
   );
 }
 
-function HeroCarousel() {
-  const [slide, setSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setTimeout(
-      () => setSlide((current) => (current + 1) % heroSlides.length),
-      6000,
-    );
-    return () => window.clearTimeout(timer);
-  }, [slide]);
-
-  const move = (direction) => {
-    setSlide((current) => (current + direction + heroSlides.length) % heroSlides.length);
-  };
-
-  return (
-    <section className="hero-carousel" aria-label="Novedades de Radiadores Clau S.A.C.">
-      <picture key={slide}>
-        <source
-          media="(max-width: 720px)"
-          srcSet={heroSlides[slide].mobile}
-        />
-        <SmartImage
-          src={heroSlides[slide].desktop}
-          fallback="/clau-portada.webp"
-          className="hero-image"
-          alt={heroSlides[slide].alt}
-        />
-      </picture>
-      <button className="hero-arrow hero-arrow-left" type="button" onClick={() => move(-1)} aria-label="Anterior">
-        <Icon name="arrowLeft" size={31} strokeWidth={2.2} />
-      </button>
-      <button className="hero-arrow hero-arrow-right" type="button" onClick={() => move(1)} aria-label="Siguiente">
-        <Icon name="arrowRight" size={31} strokeWidth={2.2} />
-      </button>
-      <div className="hero-dots" role="tablist" aria-label="Seleccionar banner">
-        {heroSlides.map((_, index) => (
-          <button
-            key={index}
-            type="button"
-            className={index === slide ? "is-active" : ""}
-            onClick={() => setSlide(index)}
-            aria-label={`Mostrar banner ${index + 1}`}
-            aria-selected={index === slide}
-            role="tab"
-          />
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function PromoRail({ navigate }) {
-  const promos = [
-    ["products/5879-27-SCANIA.jpg", "Enfriadores", "/store/?q=enfriador"],
-    ["products/5719-1-freightliner.jpg", "Radiadores", "/store/?q=radiador"],
-    ["products/5724-6-freightliner.jpg", "Intercoolers", "/store/?q=intercooler"],
-  ];
-  return (
-    <section className="promo-rail" aria-label="Tipos de repuesto">
-      {promos.map(([image, label, to]) => (
-        <Link key={image} to={to} navigate={navigate} className="promo-card">
-          <SmartImage
-            src={`${ASSET_ROOT}/${image}`}
-            fallback={`${ASSET_ROOT}/products/5719-1-freightliner.jpg`}
-            alt=""
-          />
-          <strong>{label}</strong>
-        </Link>
-      ))}
-    </section>
-  );
-}
-
-function ProductCard({ product, navigate, onAdd }) {
-  const directSale =
-    product.saleMode === "direct" && Number(product.salePrice ?? product.price) > 0;
-
-  return (
-    <article className="product-card">
-      <Link to={`/producto/${product.slug}`} navigate={navigate} className="product-media">
-        {product.isNew && <span className="product-badge">Nuevo</span>}
-        <SmartImage
-          src={product.image}
-          fallback={productFallbackImage(product)}
-          alt={product.name}
-          loading="lazy"
-        />
-      </Link>
-      <div className="product-card-copy">
-        <Link
-          to={`/categoria-producto/${product.categorySlug}/`}
-          navigate={navigate}
-          className="product-category"
-        >
-          {product.brand}
-        </Link>
-        <h3>
-          <Link to={`/producto/${product.slug}`} navigate={navigate}>
-            {product.name}
-          </Link>
-        </h3>
-        <div className="product-code">Código: {product.sku}</div>
-        <div className="product-card-footer">
-          <span className={`product-price ${directSale ? "" : "is-quote"}`}>
-            {formatPrice(product)}
-          </span>
-          {directSale ? (
-            <button type="button" className="small-cart-button" onClick={() => onAdd(product)}>
-              <Icon name="cart" size={18} />
-              Agregar
-            </button>
-          ) : (
-            <a
-              href={makeWhatsAppUrl(product)}
-              target="_blank"
-              rel="noreferrer"
-              className="read-more"
-              aria-label={`Cotizar ${product.name} por WhatsApp`}
-            >
-              Cotizar
-              <Icon name="chevron" size={16} />
-            </a>
-          )}
-        </div>
-      </div>
-    </article>
-  );
-}
-
 function ProductSection({ title, products, navigate, onAdd, linkLabel, limit = 10 }) {
   const visible = products.slice(0, limit);
   if (!visible.length) return null;
@@ -742,251 +419,6 @@ function ProductSection({ title, products, navigate, onAdd, linkLabel, limit = 1
         ))}
       </div>
     </section>
-  );
-}
-
-function HomePage({ products, navigate, onAdd }) {
-  const featured = products.filter((product) => product.featured);
-  const newest = products.filter((product) => product.isNew);
-  return (
-    <>
-      <HeroCarousel />
-      <h1 className="home-service">Mantenimiento y ventas de radiadores para buses y camiones</h1>
-      <PromoRail navigate={navigate} />
-      <ProductSection
-        title="Productos destacados"
-        products={featured.length ? featured : products.slice(0, 10)}
-        navigate={navigate}
-        onAdd={onAdd}
-        linkLabel="Ver catálogo"
-      />
-      <section className="category-showcase">
-        <SmartImage
-          src={`${ASSET_ROOT}/hero-2.jpg`}
-          fallback={`${ASSET_ROOT}/hero-1.jpg`}
-          alt="Radiadores para camiones y tractocamiones"
-          loading="lazy"
-        />
-        <div className="category-showcase-copy">
-          <h2>Encuentra el repuesto correcto</h2>
-          <p>
-            Especialistas en sistemas de enfriamiento para vehículos americanos, europeos y chinos.
-          </p>
-          <Link to="/store/" navigate={navigate} className="button button-dark">
-            Explorar productos
-          </Link>
-        </div>
-      </section>
-      <ProductSection
-        title="Nuevos ingresos"
-        products={newest.length ? newest : products.slice(5)}
-        navigate={navigate}
-        onAdd={onAdd}
-        linkLabel="Ver todos"
-      />
-    </>
-  );
-}
-
-function CatalogToolbar({ resultCount, sort, setSort, filterOpen, setFilterOpen }) {
-  return (
-    <div className="catalog-toolbar">
-      <button
-        type="button"
-        className="mobile-filter-button"
-        onClick={() => setFilterOpen(!filterOpen)}
-        aria-expanded={filterOpen}
-      >
-        <Icon name="filter" size={19} />
-        Filtros
-      </button>
-      <p>{resultCount} productos</p>
-      <label>
-        <span>Ordenar por</span>
-        <select value={sort} onChange={(event) => setSort(event.target.value)}>
-          <option value="featured">Destacados</option>
-          <option value="name">Nombre A–Z</option>
-          <option value="new">Nuevos ingresos</option>
-          <option value="brand">Marca</option>
-        </select>
-      </label>
-    </div>
-  );
-}
-
-function FilterPanel({
-  products,
-  category,
-  brand,
-  setCategory,
-  setBrand,
-  filterOpen,
-}) {
-  const categories = useMemo(
-    () =>
-      Array.from(
-        new Map(products.map((product) => [product.categorySlug, product.category])).entries(),
-      ).sort((a, b) => a[1].localeCompare(b[1], "es")),
-    [products],
-  );
-  const brands = useMemo(
-    () => Array.from(new Set(products.map((product) => product.brand))).sort((a, b) => a.localeCompare(b, "es")),
-    [products],
-  );
-
-  return (
-    <aside className={`filter-panel ${filterOpen ? "is-open" : ""}`} aria-label="Filtros del catálogo">
-      <div className="filter-group">
-        <h2>Categorías</h2>
-        <button
-          type="button"
-          className={!category ? "is-active" : ""}
-          onClick={() => setCategory("")}
-        >
-          Todos los productos
-          <span>{products.length}</span>
-        </button>
-        {categories.map(([slug, label]) => (
-          <button
-            key={slug}
-            type="button"
-            className={category === slug ? "is-active" : ""}
-            onClick={() => setCategory(slug)}
-          >
-            {label}
-            <span>{products.filter((product) => product.categorySlug === slug).length}</span>
-          </button>
-        ))}
-      </div>
-      <div className="filter-group">
-        <h2>Marca</h2>
-        <label className="sr-only" htmlFor="brand-filter">
-          Filtrar por marca
-        </label>
-        <select id="brand-filter" value={brand} onChange={(event) => setBrand(event.target.value)}>
-          <option value="">Todas las marcas</option>
-          {brands.map((item) => (
-            <option key={item} value={item}>
-              {item}
-            </option>
-          ))}
-        </select>
-      </div>
-      {(category || brand) && (
-        <button
-          type="button"
-          className="clear-filters"
-          onClick={() => {
-            setCategory("");
-            setBrand("");
-          }}
-        >
-          Limpiar filtros
-        </button>
-      )}
-    </aside>
-  );
-}
-
-function StorePage({ products, navigate, onAdd, initialCategory = "" }) {
-  const queryParams = new URLSearchParams(window.location.search);
-  const query = queryParams.get("q") || "";
-  const [category, setCategory] = useState(initialCategory);
-  const [brand, setBrand] = useState("");
-  const [sort, setSort] = useState("featured");
-  const [filterOpen, setFilterOpen] = useState(false);
-
-  useEffect(() => {
-    setCategory(initialCategory);
-    setBrand("");
-    setFilterOpen(false);
-  }, [initialCategory, query]);
-
-  const filtered = useMemo(() => {
-    const term = query.trim().toLocaleLowerCase("es");
-    const result = products.filter((product) => {
-      const categoryMatch = !category || product.categorySlug === category;
-      const brandMatch = !brand || product.brand === brand;
-      const queryMatch =
-        !term ||
-        `${product.name} ${product.brand} ${product.sku} ${product.category}`
-          .toLocaleLowerCase("es")
-          .includes(term);
-      return categoryMatch && brandMatch && queryMatch;
-    });
-    return result.sort((a, b) => {
-      if (sort === "name") return a.name.localeCompare(b.name, "es");
-      if (sort === "brand") return a.brand.localeCompare(b.brand, "es");
-      if (sort === "new") return Number(b.isNew) - Number(a.isNew);
-      return Number(b.featured) - Number(a.featured);
-    });
-  }, [products, category, brand, query, sort]);
-
-  const title = query
-    ? `Resultados para “${query}”`
-    : category
-      ? products.find((product) => product.categorySlug === category)?.category || "Productos"
-      : "Todos los productos";
-
-  return (
-    <main className="page-shell catalog-page">
-      <Breadcrumbs
-        navigate={navigate}
-        items={[["/store/", "Productos"], ...(category ? [[null, title]] : [])]}
-      />
-      <div className="catalog-title-row">
-        <div>
-          <span>Catálogo especializado</span>
-          <h1>{title}</h1>
-        </div>
-        <p>
-          Repuestos para radiadores y sistemas de enfriamiento de transporte pesado.
-        </p>
-      </div>
-      <CatalogToolbar
-        resultCount={filtered.length}
-        sort={sort}
-        setSort={setSort}
-        filterOpen={filterOpen}
-        setFilterOpen={setFilterOpen}
-      />
-      <div className="catalog-layout">
-        <FilterPanel
-          products={products}
-          category={category}
-          brand={brand}
-          setCategory={setCategory}
-          setBrand={setBrand}
-          filterOpen={filterOpen}
-        />
-        <div>
-          {filtered.length ? (
-            <div className="product-grid catalog-grid">
-              {filtered.map((product) => (
-                <ProductCard key={product.id} product={product} navigate={navigate} onAdd={onAdd} />
-              ))}
-            </div>
-          ) : (
-            <div className="empty-state">
-              <Icon name="search" size={36} />
-              <h2>No encontramos productos</h2>
-              <p>Prueba con otra marca, categoría o código de pieza.</p>
-              <button
-                type="button"
-                className="button button-primary"
-                onClick={() => {
-                  setCategory("");
-                  setBrand("");
-                  navigate("/store/");
-                }}
-              >
-                Ver catálogo completo
-              </button>
-            </div>
-          )}
-        </div>
-      </div>
-    </main>
   );
 }
 
@@ -1025,8 +457,10 @@ function ProductPage({ product, products, navigate, onAdd }) {
     );
   }
 
+  const family = familyById.get(product.familyId);
   const related = products
-    .filter((candidate) => candidate.id !== product.id && candidate.categorySlug === product.categorySlug)
+    .filter((candidate) => candidate.id !== product.id && candidate.familyId === product.familyId)
+    .sort((a, b) => Number(b.brand === product.brand) - Number(a.brand === product.brand))
     .slice(0, 5);
 
   return (
@@ -1035,7 +469,7 @@ function ProductPage({ product, products, navigate, onAdd }) {
         navigate={navigate}
         items={[
           ["/store/", "Productos"],
-          [`/categoria-producto/${product.categorySlug}/`, product.category],
+          [`/store/?tipo=${family.id}`, family.label],
           [null, product.name],
         ]}
       />
@@ -1050,11 +484,11 @@ function ProductPage({ product, products, navigate, onAdd }) {
         </div>
         <div className="product-summary">
           <Link
-            to={`/categoria-producto/${product.categorySlug}/`}
+            to={`/store/?tipo=${family.id}`}
             navigate={navigate}
             className="product-detail-category"
           >
-            {product.category}
+            {family.label}
           </Link>
           <h1>{product.name}</h1>
           <div className="product-meta">
@@ -2047,7 +1481,7 @@ function AdminPage({ products, navigate }) {
         saleMode: "quote_only",
         isActive: true,
         isFeatured: false,
-        metadata: {},
+        metadata: form.get("family") ? { catalogFamily: form.get("family") } : {},
         inventoryQuantity: 0,
         lowStockThreshold: 5,
         images: match?.image
@@ -2366,7 +1800,14 @@ function AdminPage({ products, navigate }) {
                 <label>Marca<input name="brand" maxLength="120" /></label>
               </div>
               <label>
-                Categoría
+                Tipo de producto
+                <select name="family" defaultValue="">
+                  <option value="">Detectar por nombre</option>
+                  {productFamilies.map(({ id, label }) => <option key={id} value={id}>{label}</option>)}
+                </select>
+              </label>
+              <label>
+                Categoría de origen
                 <select name="categoryId" defaultValue="">
                   <option value="">Sin categoría</option>
                   {adminCategories.map((category) => (
@@ -2400,16 +1841,16 @@ function AdminProductTable({ products, onToggle, updatingProductId }) {
   }
   return (
     <div className="admin-table-wrap">
-      <table className="admin-table">
-        <thead><tr><th>Producto</th><th>Marca</th><th>Categoría</th><th>Venta</th><th>Estado</th></tr></thead>
+      <table className="admin-table admin-products-table">
+        <thead><tr><th>Producto</th><th>Marca</th><th>Tipo de producto</th><th>Venta</th><th>Estado</th></tr></thead>
         <tbody>
           {products.map((product) => (
             <tr key={product.id}>
               <td><SmartImage src={product.image} fallback={productFallbackImage(product)} alt="" /><div><strong>{product.name}</strong><small>{product.sku}</small></div></td>
-              <td>{product.brand}</td>
-              <td>{product.category}</td>
-              <td><span className="admin-sale-mode">{product.saleMode === "direct" ? "Venta directa" : "Cotización"}</span></td>
-              <td>
+              <td data-label="Marca">{product.brand}</td>
+              <td data-label="Tipo de producto">{familyById.get(product.familyId)?.label}</td>
+              <td data-label="Venta"><span className="admin-sale-mode">{product.saleMode === "direct" ? "Venta directa" : "Cotización"}</span></td>
+              <td data-label="Estado">
                 <button
                   type="button"
                   className={`status-toggle ${product.active === false ? "" : "is-active"}`}
@@ -2453,10 +1894,10 @@ function Footer({ navigate }) {
           </div>
           <nav className="footer-links" aria-label="Productos">
             <h2>Productos</h2>
-            <Link to="/store/?q=radiador" navigate={navigate}>Radiadores</Link>
-            <Link to="/store/?q=intercooler" navigate={navigate}>Intercoolers</Link>
-            <Link to="/store/?q=enfriador" navigate={navigate}>Enfriadores</Link>
-            <Link to="/store/?q=condensador" navigate={navigate}>Condensadores</Link>
+            <Link to="/store/?tipo=radiadores" navigate={navigate}>Radiadores</Link>
+            <Link to="/store/?tipo=intercoolers" navigate={navigate}>Intercoolers</Link>
+            <Link to="/store/?tipo=enfriadores" navigate={navigate}>Enfriadores</Link>
+            <Link to="/store/?tipo=condensadores" navigate={navigate}>Condensadores</Link>
           </nav>
           <nav className="footer-links" aria-label="Empresa">
             <h2>Empresa</h2>
@@ -2553,7 +1994,7 @@ function NotFoundPage({ navigate }) {
 }
 
 export function App() {
-  const { pathname, navigate } = useRoute();
+  const { route, pathname, navigate } = useRoute();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [cart, setCart] = useState(readStoredCart);
@@ -2638,10 +2079,8 @@ export function App() {
   if (isAdmin) return <AdminPage products={products} navigate={navigate} />;
 
   let page;
-  if (normalizedPath === "/") {
-    page = <HomePage products={products} navigate={navigate} onAdd={addToCart} />;
-  } else if (normalizedPath === "/store/") {
-    page = <StorePage products={products} navigate={navigate} onAdd={addToCart} />;
+  if (normalizedPath === "/" || normalizedPath === "/store/") {
+    page = <CatalogPage route={route} products={products} navigate={navigate} onAdd={addToCart} />;
   } else if (normalizedPath.startsWith("/producto/")) {
     const slug = safeDecodePathSegment(normalizedPath.split("/")[2] || "");
     page =
@@ -2649,6 +2088,7 @@ export function App() {
         <NotFoundPage navigate={navigate} />
       ) : (
         <ProductPage
+          key={slug}
           product={products.find((product) => product.slug === slug)}
           products={products}
           navigate={navigate}
@@ -2661,12 +2101,12 @@ export function App() {
       slug === null ? (
         <NotFoundPage navigate={navigate} />
       ) : (
-        <StorePage
-          key={slug}
+        <CatalogPage
+          route={route}
           products={products}
           navigate={navigate}
           onAdd={addToCart}
-          initialCategory={slug}
+          legacyCategory={slug}
         />
       );
   } else if (normalizedPath === "/nosotros/") {
@@ -2685,10 +2125,11 @@ export function App() {
 
   return (
     <div className="site">
-      <Header products={products} cartCount={cartCount} navigate={navigate} />
+      <Header products={products} cartCount={cartCount} navigate={navigate} catalog={normalizedPath === "/" || normalizedPath === "/store/" || normalizedPath.startsWith("/categoria-producto/")} />
       {page}
       <Footer navigate={navigate} />
       <FloatingWhatsApp />
+      <MobileNavigation path={normalizedPath} navigate={navigate} cartCount={cartCount} />
       <div className={`toast ${toast ? "is-visible" : ""}`} role="status" aria-live="polite">
         <Icon name="check" size={19} />
         {toast}
