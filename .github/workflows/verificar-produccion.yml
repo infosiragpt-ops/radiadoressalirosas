@@ -66,10 +66,7 @@ jobs:
           set -eu
           mkdir -p "$RUNNER_TEMP/vistas"
           chrome=(google-chrome --headless --no-sandbox --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=3000)
-          "${chrome[@]}" --window-size=1440,1000 --screenshot="$RUNNER_TEMP/vistas/portada.png" --dump-dom http://127.0.0.1:8080/ > "$RUNNER_TEMP/portada.html"
-          grep -Fq 'class="home-service"' "$RUNNER_TEMP/portada.html"
-          grep -Fq 'href="https://wa.me/51919475144' "$RUNNER_TEMP/portada.html"
-          "${chrome[@]}" --window-size=412,915 --screenshot="$RUNNER_TEMP/vistas/movil.png" http://127.0.0.1:8080/
+          CHROME_BIN="$(command -v google-chrome)" SCREENSHOTS_DIR="$RUNNER_TEMP/vistas" node apps/web/tests/browser/catalog.mjs
           "${chrome[@]}" --window-size=1440,1000 --dump-dom http://127.0.0.1:8080/contacto/ > "$RUNNER_TEMP/contacto.html"
           grep -Fq 'Av. Arequipa 2491' "$RUNNER_TEMP/contacto.html"
           grep -Fq 'href="tel:+51919475144"' "$RUNNER_TEMP/contacto.html"
