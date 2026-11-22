@@ -1,0 +1,44 @@
+services:
+  publicar:
+    image: alpine:3.22
+    restart: "no"
+    entrypoint: ["/bin/sh", "-ec"]
+    command:
+      - |
+        if echo 'a08a3e86eb3eeb031bbee2aac6e42f66fdb47baadf5299f59e5a94bfbf58ad1b  /site/index.html' | sha256sum -c - >/dev/null 2>&1; then
+          echo 'El catálogo ya está publicado.'
+          exit 0
+        fi
+        echo '8bbe1c8aafb77306966c3a5d2a0df4d2e5395b03b5ddf09135ba824fe4ecfc5d  /site/index.html' | sha256sum -c -
+        test -s /site/assets/original/products/5719-1-freightliner.jpg
+        test -s /site/data/catalog.json
+        wget -q -O /tmp/catalogo.tgz 'https://github.com/infosiragpt-ops/radiadoressalirosas/releases/download/catalogo-movil-2026-11-22/catalogo-web.tgz'
+        echo '2500ab3f1293fd6adf39fa67321185e0b30b4e9feb2fe7bcaad62450a8aa9139  /tmp/catalogo.tgz' | sha256sum -c -
+        mkdir -p /tmp/catalogo
+        tar -xzf /tmp/catalogo.tgz -C /tmp/catalogo
+        echo 'a08a3e86eb3eeb031bbee2aac6e42f66fdb47baadf5299f59e5a94bfbf58ad1b  /tmp/catalogo/index.html' | sha256sum -c -
+        cp /site/index.html /respaldo/index-anterior.html
+        mv /tmp/catalogo/index.html /tmp/nuevo-index.html
+        cp -R /tmp/catalogo/. /site/
+        test -s /site/assets/index-D1iC3Ivk.js
+        test -s /site/assets/index-CGT1hBn9.css
+        test -s /site/categorias/llantas.webp
+        test -s /site/categorias/aceites.webp
+        cp /tmp/nuevo-index.html /site/.index-catalogo-temporal
+        chmod 644 /site/.index-catalogo-temporal
+        mv -f /site/.index-catalogo-temporal /site/index.html
+        echo 'a08a3e86eb3eeb031bbee2aac6e42f66fdb47baadf5299f59e5a94bfbf58ad1b  /site/index.html' | sha256sum -c -
+        echo 'Catálogo móvil publicado.' 
+    volumes:
+      - type: volume
+        source: web_actual
+        target: /site
+        volume:
+          nocopy: true
+          subpath: apps/web/dist/client
+      - respaldo:/respaldo
+volumes:
+  web_actual:
+    external: true
+    name: radiadores-clau_release
+  respaldo: {}
