@@ -1,0 +1,63 @@
+name: Verificar producción
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      POSTGRES_DB: clau_prueba
+      POSTGRES_USER: clau_owner
+      CORS_ORIGINS: https://radiadoresclau.com
+      API_BIND_ADDRESS: 127.0.0.1
+      TRUST_PROXY: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Compilar y probar con las dependencias fijadas
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+          npm test
+      - name: Crear credenciales efímeras para la prueba
+        run: |
+          owner=$(openssl rand -hex 32)
+          runtime=$(openssl rand -hex 32)
+          {
+            echo "POSTGRES_PASSWORD=$owner"
+            echo "TEST_RUNTIME_PASSWORD=$runtime"
+            echo "DATABASE_URL=postgresql://clau_app:$runtime@postgres:5432/$POSTGRES_DB"
+            echo "MIGRATOR_DATABASE_URL=postgresql://$POSTGRES_USER:$owner@postgres:5432/$POSTGRES_DB"
+            echo "SESSION_SECRET=$(openssl rand -hex 48)"
+          } >> "$GITHUB_ENV"
+      - name: Probar el arranque y la migración con PostgreSQL 16
+        run: |
+          docker compose build web api
+          docker compose up -d --wait postgres
+          docker compose --profile ops run --rm --build migrate
+          docker compose exec -T postgres psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" \
+            -v database_name="$POSTGRES_DB" -v runtime_role=clau_app \
+            -v runtime_password="$TEST_RUNTIME_PASSWORD" < packages/db/scripts/provision-runtime-role.sql
+          docker compose --profile bootstrap run --rm --build seed
+          docker compose up -d --wait web
+      - name: Verificar la web, los datos públicos y el catálogo
+        run: |
+          set -eu -o pipefail
+          url=http://127.0.0.1:8080
+          curl -fsS "$url/" | grep -F '<title>Radiadores Clau S.A.C. | Radiadores para buses y camiones</title>'
+          curl -fsS "$url/store/" | grep -F '<div id="root"></div>'
+          curl -fsS "$url/clau-portada.webp" -o /dev/null
+          curl -fsS "$url/api/v1/health" | jq -e '.status == "ok" and .database.status == "ok"'
+          curl -fsS "$url/api/v1/settings" | jq -e '.data.store_name == "Radiadores Clau S.A.C." and .data.contact.phone == "+51919475144"'
+          curl -fsS "$url/api/v1/products?limit=1" | jq -e '.meta.total == 186 and (.data | length) == 1'
+          curl -fsS "$url/api/v1/categories" | jq -e '(.data | length) == 11'
