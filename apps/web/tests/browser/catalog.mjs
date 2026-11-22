@@ -33,6 +33,12 @@ try {
     }));
     assert.equal(layout.scrollWidth, width, "Desbordamiento a " + width + " px");
     assert.equal(layout.columns, columns);
+    const fit = await page.locator(".family-choice").evaluateAll(cards => cards.every(card => {
+      const image = card.querySelector("img").getBoundingClientRect();
+      const frame = card.querySelector(".family-photo").getBoundingClientRect();
+      return image.top >= frame.top - 1 && image.bottom <= frame.bottom + 1;
+    }));
+    assert.ok(fit, "Imágenes de categoría dentro de su espacio a " + width + " px");
   }
   await page.screenshot({ path: join(screenshots, "portada.png") });
   await page.setViewportSize(phone);
