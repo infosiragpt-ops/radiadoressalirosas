@@ -1,4 +1,4 @@
-# API de Radiadores Salirosas
+# API de Radiadores Clau S.A.C.
 
 Backend HTTP en TypeScript, Fastify y PostgreSQL. El prefijo estable es
 `/api/v1`.

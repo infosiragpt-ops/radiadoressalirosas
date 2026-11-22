@@ -1,9 +1,6 @@
-# Radiadores Salirosas
+# Radiadores Clau S.A.C.
 
-Implementación profesional en código del catálogo de Radiadores Salirosas.
-Conserva la identidad visual y los activos del sitio de referencia, pero
-reemplaza WordPress/WooCommerce por una arquitectura React + Fastify +
-PostgreSQL.
+Catálogo, cotizaciones y administración para el mantenimiento y la venta de radiadores para buses y camiones, con React, Fastify y PostgreSQL. El dominio de producción es `https://radiadoresclau.com`.
 
 ## Arquitectura
 
@@ -56,28 +53,57 @@ La web queda en `http://localhost:4173` y la API en
 `http://127.0.0.1:4000/api/v1`. Vite reenvía `/api` a la API durante el
 desarrollo.
 
-## Bootstrap con Docker
+## Producción en el VPS de Hostinger
 
-El seed es una operación explícita de primera instalación; nunca se ejecuta
-automáticamente al reiniciar la API, porque podría sobrescribir cambios hechos
-desde administración.
+Use Docker Compose y una base de datos dedicada a esta aplicación. En el directorio de la versión desplegada, cree un `.env` con permisos `600`. Use nombres y secretos propios para el propietario de PostgreSQL, la cuenta limitada de la API y las sesiones. Las dos URL de PostgreSQL usan el host interno `postgres`.
+
+Para la primera instalación, seleccione puertos libres en el VPS y genere los secretos **en el servidor**. Este ejemplo requiere Bash, OpenSSL y que el directorio todavía no contenga un archivo `.env`.
 
 ```bash
-docker compose up -d postgres
-docker compose --profile bootstrap run --rm seed
-docker compose up -d --build api
+(
+  set -eu
+  umask 077
+  set -o noclobber
+  owner_password=$(openssl rand -hex 32)
+  runtime_password=$(openssl rand -hex 32)
+  cat > .env <<EOF
+COMPOSE_PROJECT_NAME=radiadores-clau
+POSTGRES_DB=radiadores_clau
+POSTGRES_USER=clau_owner
+POSTGRES_PASSWORD=$owner_password
+RUNTIME_ROLE=clau_app
+RUNTIME_PASSWORD=$runtime_password
+MIGRATOR_DATABASE_URL=postgresql://clau_owner:$owner_password@postgres:5432/radiadores_clau
+DATABASE_URL=postgresql://clau_app:$runtime_password@postgres:5432/radiadores_clau
+SESSION_SECRET=$(openssl rand -hex 48)
+CORS_ORIGINS=https://radiadoresclau.com,https://www.radiadoresclau.com
+TRUST_PROXY=true
+API_BIND_ADDRESS=127.0.0.1
+API_PORT=4000
+WEB_PORT=8080
+EOF
+)
 ```
 
-Después del bootstrap, los reinicios habituales usan únicamente
-`docker compose up -d`. Antes de desplegar una versión con migraciones nuevas,
-ejecute `docker compose --profile ops run --rm migrate`. Vuelva a ejecutar
-`seed` solo para una importación deliberada del catálogo y después de respaldar
-PostgreSQL.
+Después de ajustar los puertos, inicie PostgreSQL, ejecute las migraciones, conceda permisos a la cuenta limitada y cargue el catálogo de la primera instalación.
 
-En una publicación donde frontend y API usen dominios distintos, compile la web
-con `VITE_API_BASE_URL=https://api.su-dominio.com/api/v1` y agregue el origen
-del frontend a `CORS_ORIGINS`. El valor está documentado en
-`apps/web/.env.example`; el desarrollo local sigue usando el proxy de Vite.
+```bash
+set -a
+. ./.env
+set +a
+docker compose up -d --wait postgres
+docker compose --profile ops run --build --rm migrate
+docker compose exec -T postgres psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" \
+  -v database_name="$POSTGRES_DB" -v runtime_role="$RUNTIME_ROLE" \
+  -v runtime_password="$RUNTIME_PASSWORD" < packages/db/scripts/provision-runtime-role.sql
+docker compose --profile bootstrap run --build --rm seed
+docker compose up -d --build --wait web
+curl --fail "http://127.0.0.1:$WEB_PORT/api/v1/health"
+```
+
+Para actualizar una instalación existente, conserve el archivo de entorno y el volumen del proyecto. Respalde la base de datos, ejecute la tarea `migrate` y actualice `web` y `api` con Compose. El seed es exclusivo de la primera importación porque puede sobrescribir cambios del catálogo.
+
+En el proxy HTTPS del VPS, enrute los dos nombres del sitio hacia `127.0.0.1:$WEB_PORT`, y establezca `Host`, `X-Real-IP` y `X-Forwarded-Proto` con los valores del proxy. Verifique el sitio y la API contra el VPS. A continuación, dirija el registro A de `radiadoresclau.com` al VPS, compruebe que `www` apunta al mismo sitio y active el certificado de ambos nombres. Compruebe desde una conexión externa la portada, el catálogo y `/api/v1/health` por HTTPS.
 
 ## Validación
 
@@ -103,7 +129,7 @@ para empaquetado.
   tareas one-shot) de `DATABASE_URL` (cuenta limitada del runtime).
 - `packages/db/scripts/provision-runtime-role.sql` permite crear esa cuenta
   limitada de manera explícita, sin contraseñas incrustadas en el repositorio.
-- `docker-compose.yml` ofrece PostgreSQL y API sin credenciales incrustadas.
+- `docker-compose.yml` ofrece la web, la API y PostgreSQL con puertos locales para el proxy del VPS.
 
 Consulta [apps/api/README.md](apps/api/README.md) para el contrato de rutas y
 [reference/source-capture.md](reference/source-capture.md) para la trazabilidad

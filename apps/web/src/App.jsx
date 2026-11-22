@@ -1,6 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa6";
-import { FiClock, FiMapPin, FiNavigation, FiPhone } from "react-icons/fi";
 import {
   FALLBACK_PRODUCTS,
   formatPrice,
@@ -25,37 +23,20 @@ import {
 } from "./api.js";
 
 const ASSET_ROOT = "/assets/original";
-const heroSlides = ["hero-1.jpg", "hero-2.jpg", "hero-3.jpg"];
-const mobileHeroSlides = [
-  "hero-mobile-radiadores-europeos.jpg",
-  "hero-mobile-envios.jpg",
+const heroSlides = [
+  { desktop: "/clau-portada.webp", mobile: "/clau-flotas.webp", alt: "Radiadores Clau S.A.C. para flotas de buses y camiones" },
+  { desktop: `${ASSET_ROOT}/hero-2.jpg`, mobile: "/clau-camiones.webp", alt: "Radiadores para buses y camiones europeos" },
 ];
 const STAFF_ROLES = new Set(["admin", "staff"]);
-const BUSINESS_ADDRESS = "Av. Mariscal Nieto 283, Urb. Los Sauces, Ate, Lima";
-const BUSINESS_MAP_EMBED =
-  "https://maps.google.com/maps?q=Av.%20Mariscal%20Nieto%20283%2C%20Urb.%20Los%20Sauces%2C%20Ate%2C%20Lima&t=m&z=16&output=embed&iwloc=near";
-const BUSINESS_DIRECTIONS =
-  "https://www.google.com/maps/dir/?api=1&destination=Av.%20Mariscal%20Nieto%20283%2C%20Urb.%20Los%20Sauces%2C%20Ate%2C%20Lima";
-const SOCIAL_LINKS = [
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/radiadores.salirosas/",
-    className: "instagram",
-    Icon: FaInstagram,
-  },
-  {
-    name: "TikTok",
-    href: "https://www.tiktok.com/@radiadores.salirosas",
-    className: "tiktok",
-    Icon: FaTiktok,
-  },
-  {
-    name: "Facebook",
-    href: "https://www.facebook.com/share/1CgrnXDu37/?mibextid=wwXIfr",
-    className: "facebook",
-    Icon: FaFacebookF,
-  },
-];
+const BUSINESS_ADDRESS = "Av. Arequipa 2491, Lima, Perú, 0600";
+const MAP_QUERY = encodeURIComponent("Av. Arequipa 2491, Lima, Perú");
+const BUSINESS_MAP_EMBED = `https://maps.google.com/maps?q=${MAP_QUERY}&z=16&output=embed`;
+const BUSINESS_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${MAP_QUERY}`;
+const PHONE = "+51919475144";
+const DISPLAY_PHONE = "+51 919 475 144";
+const WEBSITE = "https://radiadoresclau.com";
+const whatsappLink = (message) =>
+  `https://wa.me/${PHONE.slice(1)}?text=${encodeURIComponent(message)}`;
 const QUOTE_STATUS_LABELS = {
   new: "Nueva",
   contacted: "Contactada",
@@ -106,7 +87,7 @@ const safeDecodePathSegment = (value) => {
 const readStoredCart = () => {
   try {
     const parsed = JSON.parse(
-      window.localStorage.getItem("salirosas-cart") || "[]",
+      window.localStorage.getItem("radiadores-clau-cart") ?? window.localStorage.getItem("salirosas-cart") ?? "[]",
     );
     if (!Array.isArray(parsed)) return [];
 
@@ -315,6 +296,18 @@ function Link({ to, navigate, children, className = "", onClick, ...props }) {
   );
 }
 
+function Brand() {
+  return (
+    <span className="clau-brand">
+      <img src="/clau-icon.png" width="48" height="48" alt="" />
+      <span className="clau-wordmark">
+        <span>Radiadores</span>
+        <strong>Clau <small>S.A.C.</small></strong>
+      </span>
+    </span>
+  );
+}
+
 function SmartImage({ src, fallback, alt, className = "", ...props }) {
   const [current, setCurrent] = useState(src || fallback);
 
@@ -339,23 +332,23 @@ function makeWhatsAppUrl(product, quantity = 1) {
   const text = product
     ? `Hola, deseo cotizar ${quantity > 1 ? `${quantity} unidades de ` : ""}${product.name} (código ${product.sku}). ¿Podrían confirmar disponibilidad y compatibilidad?`
     : "Hola, deseo recibir asesoría para encontrar el repuesto correcto para mi vehículo.";
-  return `https://api.whatsapp.com/send?phone=51943716278&text=${encodeURIComponent(text)}`;
+  return whatsappLink(text);
 }
 
 function makeCartWhatsAppUrl(items) {
   const lines = items.map(
     ({ product, quantity }) => `• ${quantity} × ${product.name} (${product.sku})`,
   );
-  return `https://api.whatsapp.com/send?phone=51943716278&text=${encodeURIComponent(
+  return whatsappLink(
     `Hola, deseo confirmar este pedido:\n${lines.join("\n")}\n\n¿Podrían indicarme disponibilidad y forma de entrega?`,
-  )}`;
+  );
 }
 
 function makeRecoveryWhatsAppUrl(email) {
-  const text = `Hola, necesito recuperar el acceso a mi cuenta de Radiadores Salirosas${
-    email ? ` asociada al correo ${email}` : ""
-  }. ¿Podrían ayudarme a verificar mi identidad?`;
-  return `https://api.whatsapp.com/send?phone=51943716278&text=${encodeURIComponent(text)}`;
+  const text = `Hola, necesito recuperar el acceso a mi cuenta de Radiadores Clau S.A.C.${
+    email ? ` asociada al correo ${email}.` : ""
+  } ¿Podrían ayudarme a verificar mi identidad?`;
+  return whatsappLink(text);
 }
 
 function useRoute() {
@@ -423,13 +416,8 @@ function Header({ products, cartCount, navigate }) {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link to="/" navigate={navigate} className="brand-link" aria-label="Radiadores Salirosas, inicio">
-          <SmartImage
-            src={`${ASSET_ROOT}/logo.png`}
-            fallback={`${ASSET_ROOT}/logo.png`}
-            className="brand-logo"
-            alt="Radiadores Salirosas"
-          />
+        <Link to="/" navigate={navigate} className="brand-link" aria-label="Radiadores Clau S.A.C., inicio">
+          <Brand />
         </Link>
 
         <div className="desktop-search" ref={searchWrap}>
@@ -620,23 +608,17 @@ function HeroCarousel() {
   };
 
   return (
-    <section className="hero-carousel" aria-label="Novedades de Radiadores Salirosas">
+    <section className="hero-carousel" aria-label="Novedades de Radiadores Clau S.A.C.">
       <picture key={slide}>
         <source
-          media="(max-width: 700px)"
-          srcSet={`${ASSET_ROOT}/${mobileHeroSlides[slide % mobileHeroSlides.length]}`}
+          media="(max-width: 720px)"
+          srcSet={heroSlides[slide].mobile}
         />
         <SmartImage
-          src={`${ASSET_ROOT}/${heroSlides[slide]}`}
-          fallback={`${ASSET_ROOT}/hero-1.jpg`}
+          src={heroSlides[slide].desktop}
+          fallback="/clau-portada.webp"
           className="hero-image"
-          alt={
-            slide === 0
-              ? "Sistemas de enfriamiento para buses, camiones y tractocamiones"
-              : slide === 1
-                ? "Soluciones de enfriamiento para transporte pesado"
-                : "Radiadores y enfriadores con cobertura nacional"
-          }
+          alt={heroSlides[slide].alt}
         />
       </picture>
       <button className="hero-arrow hero-arrow-left" type="button" onClick={() => move(-1)} aria-label="Anterior">
@@ -664,19 +646,20 @@ function HeroCarousel() {
 
 function PromoRail({ navigate }) {
   const promos = [
-    ["promo-enfriadores.jpg", "Enfriadores", "/store/?q=enfriador"],
-    ["promo-radiadores.jpg", "Radiadores", "/store/?q=radiador"],
-    ["promo-intercooler.jpg", "Intercoolers", "/store/?q=intercooler"],
+    ["products/5879-27-SCANIA.jpg", "Enfriadores", "/store/?q=enfriador"],
+    ["products/5719-1-freightliner.jpg", "Radiadores", "/store/?q=radiador"],
+    ["products/5724-6-freightliner.jpg", "Intercoolers", "/store/?q=intercooler"],
   ];
   return (
-    <section className="promo-rail" aria-label="Promociones">
+    <section className="promo-rail" aria-label="Tipos de repuesto">
       {promos.map(([image, label, to]) => (
         <Link key={image} to={to} navigate={navigate} className="promo-card">
           <SmartImage
             src={`${ASSET_ROOT}/${image}`}
-            fallback={`${ASSET_ROOT}/promo-radiadores.jpg`}
-            alt={`Ver productos de ${label}`}
+            fallback={`${ASSET_ROOT}/products/5719-1-freightliner.jpg`}
+            alt=""
           />
+          <strong>{label}</strong>
         </Link>
       ))}
     </section>
@@ -768,6 +751,7 @@ function HomePage({ products, navigate, onAdd }) {
   return (
     <>
       <HeroCarousel />
+      <h1 className="home-service">Mantenimiento y ventas de radiadores para buses y camiones</h1>
       <PromoRail navigate={navigate} />
       <ProductSection
         title="Productos destacados"
@@ -1167,20 +1151,20 @@ function AboutPage({ navigate }) {
   const values = [
     ["Experiencia especializada", "Conocemos las exigencias térmicas de buses, camiones y tractocamiones."],
     ["Asesoría responsable", "Verificamos códigos, medidas y compatibilidad antes de cada cotización."],
-    ["Cobertura nacional", "Coordinamos entregas seguras para clientes de todo el Perú."],
+    ["Mantenimiento", "Revisamos el radiador de tu bus o camión y coordinamos los trabajos que necesita."],
   ];
   return (
     <main className="about-page">
       <section className="inner-hero about-hero">
         <div className="inner-hero-copy">
-          <span>Radiadores Salirosas</span>
-          <h1>Expertos en sistemas de enfriamiento</h1>
+          <span>Radiadores Clau S.A.C.</span>
+          <h1>Mantenimiento y ventas de radiadores para buses y camiones</h1>
           <p>
             Soluciones confiables para mantener operativa la flota de transporte pesado.
           </p>
         </div>
         <SmartImage
-          src={`${ASSET_ROOT}/hero-3.jpg`}
+          src={`${ASSET_ROOT}/hero-2.jpg`}
           fallback={`${ASSET_ROOT}/hero-1.jpg`}
           alt="Radiadores y enfriadores para transporte pesado"
         />
@@ -1288,17 +1272,16 @@ function ContactPage() {
           <h2>Estamos para ayudarte</h2>
           <a href={makeWhatsAppUrl()} target="_blank" rel="noreferrer">
             <span><Icon name="whatsapp" size={23} /></span>
-            <div><strong>WhatsApp comercial</strong><small>Atención y cotizaciones</small></div>
+            <div><strong>WhatsApp comercial</strong><small>{DISPLAY_PHONE}</small></div>
             <Icon name="chevron" size={19} />
           </a>
           <div className="contact-info-row">
             <span><Icon name="pin" size={22} /></span>
-            <div><strong>Lima, Perú</strong><small>Despachos coordinados a nivel nacional</small></div>
+            <div><strong>Dirección del taller</strong><small>{BUSINESS_ADDRESS}</small></div>
           </div>
           <div className="contact-hours">
-            <strong>Horario de atención</strong>
-            <p>Lunes a viernes: 8:30 a. m. – 6:00 p. m.</p>
-            <p>Sábados: 9:00 a. m. – 1:00 p. m.</p>
+            <strong>Visita el taller</strong>
+            <p><a href={BUSINESS_DIRECTIONS} target="_blank" rel="noreferrer">Ver cómo llegar</a></p>
           </div>
         </section>
         <section className="contact-form-panel">
@@ -1659,7 +1642,7 @@ function AccountPage({ navigate }) {
             alt="Sistemas de enfriamiento para transporte pesado"
           />
           <div>
-            <h1>Tu cuenta Salirosas</h1>
+            <h1>Tu cuenta Clau</h1>
             <p>Guarda tus datos y mantén todas tus solicitudes organizadas.</p>
           </div>
         </section>
@@ -1855,7 +1838,7 @@ function AdminAccessGate({
             alt="Sistemas de enfriamiento para transporte pesado"
           />
           <div>
-            <h1>Panel Salirosas</h1>
+            <h1>Panel de Radiadores Clau</h1>
             <p>Acceso restringido para la gestión del catálogo y las cotizaciones.</p>
           </div>
         </section>
@@ -2168,7 +2151,7 @@ function AdminPage({ products, navigate }) {
   const adminName =
     `${sessionUser?.firstName || ""} ${sessionUser?.lastName || ""}`.trim() ||
     sessionUser?.email ||
-    "Equipo Salirosas";
+    "Equipo Clau";
   const initials =
     `${sessionUser?.firstName?.[0] || ""}${sessionUser?.lastName?.[0] || ""}` ||
     adminName.slice(0, 2);
@@ -2178,7 +2161,7 @@ function AdminPage({ products, navigate }) {
     <div className="admin-shell">
       <aside className="admin-sidebar">
         <a href="/" className="admin-logo">
-          <SmartImage src={`${ASSET_ROOT}/logo.png`} fallback={`${ASSET_ROOT}/logo.png`} alt="Radiadores Salirosas" />
+          <Brand />
         </a>
         <span className="admin-label">Administración</span>
         <nav>
@@ -2452,48 +2435,20 @@ function AdminProductTable({ products, onToggle, updatingProductId }) {
 function Footer({ navigate }) {
   return (
     <>
-      <section className="payment-band">
-        <div>
-          <p>Aceptamos pagos con las principales tarjetas de crédito y débito</p>
-          <SmartImage
-            src={`${ASSET_ROOT}/payments.png`}
-            fallback={`${ASSET_ROOT}/payments.png`}
-            alt="Medios de pago aceptados"
-          />
-        </div>
-      </section>
       <footer className="site-footer">
         <div className="footer-grid">
           <div className="footer-about">
-            <SmartImage
-              src={`${ASSET_ROOT}/logo.png`}
-              fallback={`${ASSET_ROOT}/logo.png`}
-              alt="Radiadores Salirosas"
-            />
+            <Brand />
             <p>
-              Radiadores, intercoolers, enfriadores de aceite y condensadores para camiones
-              americanos, europeos y chinos.
+              Mantenimiento y ventas de radiadores para buses y camiones.
             </p>
             <div className="footer-contact-links">
               <a href={makeWhatsAppUrl()} target="_blank" rel="noreferrer">
                 <Icon name="whatsapp" size={20} />
                 Atención por WhatsApp
               </a>
-              <nav className="footer-socials" aria-label="Redes sociales">
-                {SOCIAL_LINKS.map(({ name, href, className, Icon: SocialIcon }) => (
-                  <a
-                    key={name}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`footer-social-link is-${className}`}
-                    aria-label={`Visitar ${name} de Radiadores Salirosas`}
-                    title={name}
-                  >
-                    <SocialIcon aria-hidden="true" />
-                  </a>
-                ))}
-              </nav>
+              <a href={WEBSITE}>radiadoresclau.com</a>
+              <a href="https://www.facebook.com/people/Radiadores-Clau-SAC/61563858691787/" target="_blank" rel="noreferrer">Facebook de Radiadores Clau</a>
             </div>
           </div>
           <nav className="footer-links" aria-label="Productos">
@@ -2522,7 +2477,7 @@ function Footer({ navigate }) {
                 rel="noopener noreferrer"
                 className="footer-directions"
               >
-                <FiNavigation aria-hidden="true" />
+                <Icon name="pin" size={16} />
                 Cómo llegar
               </a>
             </div>
@@ -2542,18 +2497,17 @@ function Footer({ navigate }) {
                 rel="noopener noreferrer"
                 className="footer-address"
               >
-                <FiMapPin aria-hidden="true" />
+                <Icon name="pin" size={18} />
                 <span>{BUSINESS_ADDRESS}</span>
               </a>
               <div className="footer-location-meta">
-                <span><FiClock aria-hidden="true" />Lun–Vie · 8:30 a. m.–6:00 p. m.</span>
-                <a href="tel:+51943716278"><FiPhone aria-hidden="true" />+51 943 716 278</a>
+                <a href={`tel:${PHONE}`}><Icon name="phone" size={16} />{DISPLAY_PHONE}</a>
               </div>
             </address>
           </section>
         </div>
         <div className="footer-bottom">
-          <span>Copyright © 2026 Radiadores Salirosas</span>
+          <span>© {new Date().getFullYear()} Radiadores Clau S.A.C.</span>
           <Link to="/admin/" navigate={navigate}>Administración</Link>
         </div>
       </footer>
@@ -2629,27 +2583,27 @@ export function App() {
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem("salirosas-cart", JSON.stringify(cart));
+    window.localStorage.setItem("radiadores-clau-cart", JSON.stringify(cart));
   }, [cart]);
 
   useEffect(() => {
     const labels = {
-      "/": "Radiadores Salirosas | Sistemas de enfriamiento",
-      "/store/": "Productos | Radiadores Salirosas",
-      "/nosotros/": "Nosotros | Radiadores Salirosas",
-      "/contacto/": "Contacto | Radiadores Salirosas",
-      "/cart/": "Carrito | Radiadores Salirosas",
-      "/my-account/": "Mi cuenta | Radiadores Salirosas",
-      "/recuperar-contrasena/": "Recuperar contraseña | Radiadores Salirosas",
-      "/admin/": "Administración | Radiadores Salirosas",
+      "/": "Radiadores Clau S.A.C. | Radiadores para buses y camiones",
+      "/store/": "Productos | Radiadores Clau S.A.C.",
+      "/nosotros/": "Nosotros | Radiadores Clau S.A.C.",
+      "/contacto/": "Contacto | Radiadores Clau S.A.C.",
+      "/cart/": "Carrito | Radiadores Clau S.A.C.",
+      "/my-account/": "Mi cuenta | Radiadores Clau S.A.C.",
+      "/recuperar-contrasena/": "Recuperar contraseña | Radiadores Clau S.A.C.",
+      "/admin/": "Administración | Radiadores Clau S.A.C.",
     };
     document.title =
       labels[pathname] ||
       (pathname.startsWith("/producto/")
-        ? "Producto | Radiadores Salirosas"
+        ? "Producto | Radiadores Clau S.A.C."
         : pathname.startsWith("/categoria-producto/")
-          ? "Categoría | Radiadores Salirosas"
-          : "Radiadores Salirosas");
+          ? "Categoría | Radiadores Clau S.A.C."
+          : "Radiadores Clau S.A.C.");
   }, [pathname]);
 
   useEffect(() => {

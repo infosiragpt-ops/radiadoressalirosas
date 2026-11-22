@@ -189,7 +189,7 @@ export function normalizeProduct(product, index = 0) {
     brandObject?.name ||
     product.brand_name ||
     (typeof product.brand === "string" ? product.brand : "") ||
-    "Salirosas";
+    "Sin marca especificada";
   const images = Array.isArray(product.images) ? product.images : [];
   const imageObject =
     typeof product.image === "object" && product.image ? product.image : null;
@@ -350,7 +350,7 @@ export function formatPrice(product) {
 
 export function productFallbackImage(product) {
   const category = String(product?.categorySlug || "").toLowerCase();
-  if (category.includes("intercool")) return `${ASSET_ROOT}/promo-intercooler.jpg`;
-  if (category.includes("enfri")) return `${ASSET_ROOT}/promo-enfriadores.jpg`;
-  return `${ASSET_ROOT}/promo-radiadores.jpg`;
+  if (category.includes("intercool")) return `${ASSET_ROOT}/products/5724-6-freightliner.jpg`;
+  if (category.includes("enfri")) return `${ASSET_ROOT}/products/5879-27-SCANIA.jpg`;
+  return `${ASSET_ROOT}/products/5719-1-freightliner.jpg`;
 }
